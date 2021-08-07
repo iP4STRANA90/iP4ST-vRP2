@@ -3,16 +3,26 @@
 ------------------------------------------
 --
 --	Created by Jens Sandalgaard
---
+--	
 --	This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.
 --
 --	https://github.com/iEns/RealisticVehicleFailure
 --
 
 
+local everyoneWhitelisted = false 
 
-local function checkWhitelist(id)
-	for key, value in pairs(RepairWhitelist) do
+local whitelist = 
+{
+	"steam:123456789012345",
+	"steam:000000000000000",
+	"ip:192.168.0.1"			-- not sure if ip whitelist works?
+}
+
+
+
+function checkWhitelist(id)
+	for key, value in pairs(whitelist) do
 		if id == value then
 			return true
 		end
@@ -20,12 +30,12 @@ local function checkWhitelist(id)
 	return false
 end
 
-AddEventHandler('chatMessage', function(source, _, message)
-	local msg = string.lower(message)
+--[[AddEventHandler('chatMessage', function(source, x, msg)
+	local msg = string.lower(msg)
 	local identifier = GetPlayerIdentifiers(source)[1]
 	if msg == "/repair" then
 		CancelEvent()
-		if RepairEveryoneWhitelisted == true then
+		if everyoneWhitelisted == true then
 			TriggerClientEvent('iens:repair', source)
 		else
 			if checkWhitelist(identifier) then
@@ -35,4 +45,4 @@ AddEventHandler('chatMessage', function(source, _, message)
 			end
 		end
 	end
-end)
+end)]]

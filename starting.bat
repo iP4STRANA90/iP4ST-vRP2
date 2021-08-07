@@ -1,2 +1,2 @@
-cd /d D:\FXServer\vrpfx
-D:\FXServer\vrpfx\FXServer.exe +exec server.cfg
+cd /d C:\FXServer\[changeme]
+C:\FXServer\[changeme]\FXServer.exe +exec server.cfg

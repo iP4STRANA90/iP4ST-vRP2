@@ -1,23 +1,38 @@
--- Manifest Version
-resource_manifest_version '77731fab-63ca-442c-a67b-abc70f28dfa5'
+resource_manifest_version '44febabe-d386-4d18-afbe-5e627f4af937'
 
--- UI
-ui_page "ui/index.html"
-files {
-	"ui/index.html",
-	"ui/assets/clignotant-droite.svg",
-	"ui/assets/clignotant-gauche.svg",
-	"ui/assets/feu-position.svg",
-	"ui/assets/feu-route.svg",
-	"ui/assets/fuel.svg",
-	"ui/fonts/fonts/Roboto-Bold.ttf",
-	"ui/fonts/fonts/Roboto-Regular.ttf",
-	"ui/script.js",
-	"ui/style.css",
-	"ui/debounce.min.js"
-}
+description 'MSX Mole Status'
 
--- Client Scripts
+version '1.0.0'
+
 client_scripts {
-	"client.lua",
+	'config.lua',
+	'client/status.lua',
+	'client/main.lua',
+	'client/carhud.lua',
+	--'client/autopilot.lua',
+	--'client/voicegps.lua',
+	--'client/voice.lua'
 }
+
+ui_page 'html/ui.html'
+
+files {
+	'html/ui.html',
+	'html/css/app.css',
+	'html/scripts/app.js',
+	'html/logo.png',
+	'html/logo_navidad.png',
+	'html/img/vehicle-gear.png',
+	'html/img/vehicle-lights.png',
+	'html/img/vehicle-lights-high.png',
+	'html/img/vehicle-seatbelt.png',
+	'html/img/defcon1.png',
+	'html/img/defcon2.png',
+	'html/img/defcon3.png',
+	'html/img/defcon4.png',
+	'html/img/defcon5.png',
+	'html/fonts/Adventure.otf',
+	'html/fonts/bankgothic.ttf',
+	
+}
+
